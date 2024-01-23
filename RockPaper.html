@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RockPapreSissor</title>
+    </head>
+
+
+    <body>
+
+        <button
+        
+        onclick="Game('Rock')">
+            Rock
+        </button>
+
+
+        <button
+        onclick="Game('paper')">
+            papre
+        </button>
+
+        <button
+        onclick="Game('Sissor') ">
+            Sissor
+        </button>
+
+        
+        <script>
+
+            
+        function Game(Playermove){
+            const button=ComputerMove();
+
+                let result='';
+                
+                if(Playermove==='Sissor')
+                {
+                        if(button==='Rock')
+                    {
+                        result='wins';
+                    }else if(button==='papre')
+                    {
+                        result='loses';
+                    }else 
+                    {
+                        result='Tie';
+                    }
+                }else if(Playermove==='paper'){
+
+                        if(button==='Rock')
+                        {
+                            result='loses';
+                        }else if(button==='papre')
+                        {
+                            result='Tie';
+                        }else 
+                        {
+                            result='wins';
+                        }
+                }
+                else if(Playermove==='Rock'){
+                    if(button==='Rock')
+                        {
+                            result='Tie';
+                        }else if(button==='papre')
+                        {
+                            result='wins';
+                        }else 
+                        {
+                            result='loses';
+                        }
+        
+                }               
+          
+                console.log(result);
+                
+                alert(`${result}`);
+                
+        }   
+        
+        
+          function ComputerMove(){
+            const Number= Math.random();
+            let button='';
+        if(Number>=0 && Number<=1/3)
+        {
+            button='Rock';
+        }else if(Number>=1/3 && Number<=2/3)
+        {
+            button='papre';
+        } else if(Number>=2/3 && Number<=1){
+            button='Sissor';
+        }
+        console.log(button);
+        return button;
+          }
+
+          
+        </script>
+    </body>
+</html>
